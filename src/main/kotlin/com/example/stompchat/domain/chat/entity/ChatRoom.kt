@@ -13,5 +13,8 @@ data class ChatRoom(
     var roomId : UUID,
 
     @OneToMany(mappedBy = "chatRoom", cascade = [CascadeType.ALL], orphanRemoval = true)
-    var chatText : MutableList<ChatText>
+    var chatText : MutableList<ChatText>,
+
+    @Column
+    var lastText : String
 )
