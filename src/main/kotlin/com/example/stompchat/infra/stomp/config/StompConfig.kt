@@ -12,7 +12,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 class WebSocketConfig() : WebSocketMessageBrokerConfigurer {
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
         registry.addEndpoint("ws") //http://localhost:8080/ws
-            .setAllowedOrigins("*")
+            .setAllowedOriginPatterns("*")
             .withSockJS() //SockJS를 같이 쓰겠다 -> SockJS에서 알아서 SockJs fallback
     }
 
