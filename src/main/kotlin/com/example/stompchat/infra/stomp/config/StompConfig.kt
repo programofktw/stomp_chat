@@ -11,7 +11,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker // 메시지 브로커가 지원하는 WebSocket 메시지 처리 활성화
 class WebSocketConfig() : WebSocketMessageBrokerConfigurer {
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
-        registry.addEndpoint("ws") //http://localhost:8080/ws
+        registry.addEndpoint("ws") //http://localhost:8080/ws 웹소켓을 연결할때 쓰는 패스 설정
             .setAllowedOriginPatterns("*")
             .withSockJS() //SockJS를 같이 쓰겠다 -> SockJS에서 알아서 SockJs fallback
     }
